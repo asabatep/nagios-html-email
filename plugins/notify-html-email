@@ -32,9 +32,16 @@ use URI::Escape;
 my $nagios_url = $ARGV[0] || die('You must pass the url to your nagios installation as the first argument');
 
 my %allowed_types = (
-    'PROBLEM'         => 1,
-    'RECOVERY'        => 1,
-    'ACKNOWLEDGEMENT' => 1
+    'PROBLEM'            =>  1,
+    'RECOVERY'           =>  1,
+    'ACKNOWLEDGEMENT'    =>  1,
+    'FLAPPINGSTART'      =>  1,
+    'FLAPPINGSTOP'       =>  1,
+    'FLAPPINGDISABLED'   =>  1,
+    'DOWNTIMESTART'      =>  1,
+    'DOWNTIMEEND'        =>  1,
+    'DOWNTIMECANCELLED'  =>  1,
+    'CUSTOM'             =>  1
 );
 
 exit if !defined($allowed_types{$ENV{NAGIOS_NOTIFICATIONTYPE}});
