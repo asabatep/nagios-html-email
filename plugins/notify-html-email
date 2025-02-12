@@ -104,6 +104,10 @@ if($type eq 'service') {
             'title' => 'Event Time:',
             'data'  => $ENV{NAGIOS_SHORTDATETIME},
         },
+        {
+            'title' => 'Quick ACK:',
+            'data'  => "$nagios_url/cgi-bin/cmd.cgi?cmd_typ=34&host=$ENV{NAGIOS_HOSTNAME}&service=$ENV{NAGIOS_SERVICEDESC}",
+        },
     );
 } else {
     $notification_title = 'Nagios Host Notification';
@@ -137,6 +141,10 @@ if($type eq 'service') {
         {
             'title' => 'Event Time:',
             'data'  => $ENV{NAGIOS_SHORTDATETIME},
+        },
+        {
+            'title' => 'Quick ACK:',
+            'data'  => "$nagios_url/cgi-bin/cmd.cgi?cmd_typ=33&host=$ENV{NAGIOS_HOSTNAME}"
         },
     );
 }
